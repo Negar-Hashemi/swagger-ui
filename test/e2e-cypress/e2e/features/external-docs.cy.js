@@ -16,7 +16,9 @@ function ExternalDocsTest(baseUrl) {
       .and("contain.text", "Read external docs")
       .and("have.attr", "href", "http://swagger.io/")
     })
-
+    /**
+     * @skipOnOS win32
+     */
     it("should display link to external docs without description", () => {
       cy
         .intercept({
