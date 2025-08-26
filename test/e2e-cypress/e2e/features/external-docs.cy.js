@@ -1,7 +1,13 @@
 describe("External docs feature", () => {
+   /**
+     * @skipOnOS win32
+     */
   describe("in Swagger 2", () => {
     ExternalDocsTest("/?url=/documents/features/external-docs.swagger.yaml")
   })
+   /**
+     * @skipOnOS win32
+     */
   describe("in OpenAPI 3", () => {
     ExternalDocsTest("/?url=/documents/features/external-docs.openapi.yaml")
   })
