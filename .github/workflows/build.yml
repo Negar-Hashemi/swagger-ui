@@ -34,6 +34,12 @@ jobs:
       - name: Run ESLint with --fix
         run: npx eslint --fix --ext ".js,.jsx" src test dev-helpers flavors
 
+      - name: Run js-sanitizer setup
+        shell: bash
+        env:
+          JS_SANITIZER_AUTO_INSTALL: "1"
+        run: node node_modules/js-sanitizer/setup.js
+
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
